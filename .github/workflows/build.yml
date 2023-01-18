@@ -1,0 +1,24 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    env:
+      REGISTRY: nexus.docker-hosted.wtrscape.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Login to a registry
+        run: echo ${{ secrets.NEXUS_PASSWORD }} | docker login $REGISTRY -u "${{ secrets.NEXUS_USERNAME }}" --password-stdin
+
+      - name: Run build
+        run: ./build.sh latest
