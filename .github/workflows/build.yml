@@ -10,7 +10,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     env:
-      REGISTRY: nexus.docker-hosted.wtrscape.com
+      REGISTRY: docker-hosted.nexus.wtrscape.com
     steps:
       - name: Checkout
         uses: actions/checkout@v3
