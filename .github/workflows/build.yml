@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Login to a registry
-        run: echo ${{ secrets.NEXUS_PASSWORD }} | docker login $REGISTRY -u "${{ secrets.NEXUS_USERNAME }}" --password-stdin
+        run: echo "${{ secrets.NEXUS_PASSWORD }}" | docker login $REGISTRY -u "${{ secrets.NEXUS_USERNAME }}" --password-stdin
 
       - name: Run build
         run: ./build.sh latest
