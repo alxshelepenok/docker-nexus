@@ -25,5 +25,3 @@ COPY --from=build /nexus-repository-apk/nexus-repository-apk/target/nexus-reposi
 COPY --from=build /nexus-repository-cargo/target/nexus-repository-cargo-*-bundle.kar ${DEPLOY_DIR}
 
 USER nexus
-
-CMD ["bin/nexus", "run"]
