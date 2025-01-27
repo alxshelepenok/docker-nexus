@@ -1,4 +1,4 @@
-ARG NEXUS_VERSION=3.69.0-java17
+ARG NEXUS_VERSION=3.69.0-java11
 
 FROM maven:3-jdk-8-alpine AS build
 RUN apk add git && git clone https://github.com/sonatype-nexus-community/nexus-repository-composer.git && \
