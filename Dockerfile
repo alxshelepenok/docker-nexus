@@ -1,6 +1,6 @@
 FROM eclipse-temurin:8-jre-jammy as downloader
 
-ARG NEXUS_VERSION=3.69.0-java17
+ARG NEXUS_VERSION=3.69.0
 ARG NEXUS_DOWNLOAD_URL=https://download.sonatype.com/nexus/3/nexus-${NEXUS_VERSION}-unix.tar.gz
 
 RUN apt update && apt install -y wget
