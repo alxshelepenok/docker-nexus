@@ -3,7 +3,7 @@ ARG NEXUS_VERSION=3.69.0-java11
 FROM maven:3-jdk-8-alpine AS build
 RUN apk add git && git clone https://github.com/sonatype-nexus-community/nexus-repository-cargo.git
 
-RUN cd /nexus-repository-cargo/; mvn clean package -PbuildKar;
+RUN cd /nexus-repository-cargo/ ; mvn clean package -PbuildKar
 
 FROM sonatype/nexus3:$NEXUS_VERSION
 
